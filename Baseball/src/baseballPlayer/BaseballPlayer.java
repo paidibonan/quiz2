@@ -1,7 +1,12 @@
+
 package baseballPlayer;
+
+import java.util.Scanner;
 
 
 public class BaseballPlayer {
+	
+	Scanner sc = new Scanner(System.in);
 	
 	private String name;
 	private int atBats;
@@ -13,14 +18,14 @@ public class BaseballPlayer {
 	private int walks;
 	
 	public BaseballPlayer(String name, int AB, int H, int D, int T, int HR, int R, int W) {
-		this.name = name;
-		this.atBats = AB;
-		this.hits = H;
-		this.doubles = D;
-		this.triples = T;
-		this.homeRuns = HR;
-		this.runs = R;
-		this.walks = W;
+		this.name = sc.next();
+		this.atBats = sc.nextInt();
+		this.hits = sc.nextInt();
+		this.doubles = sc.nextInt();
+		this.triples = sc.nextInt();
+		this.homeRuns = sc.nextInt();
+		this.runs = sc.nextInt();
+		this.walks = sc.nextInt();
 	}
 	
 	public double battingAverage() {
@@ -43,6 +48,15 @@ public class BaseballPlayer {
 	
 	public double obs() {
 		return this.onBasePercentage() + this.sluggingPercentage();
+	}
+	
+	public string Stats() {
+		System.out.print("Name: " + name);
+		System.out.print("Batting Average " + battingAverage());
+		System.out.print("On base percentage: " + onBasePercentage());
+		System.out.print("Total Bases: " + totalBases());
+		System.out.print("Slugging Percentage: " + sluggingPercentage());
+		System.out.print("On base + Slugging Percentage: " + obs());
 	}
 
 
