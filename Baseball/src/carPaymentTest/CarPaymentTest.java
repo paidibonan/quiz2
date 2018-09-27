@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import carPayment.Car;
 
+import java.lang.Math;
+
 public class CarPaymentTest {
 	
 	@Test
@@ -13,7 +15,7 @@ public class CarPaymentTest {
 		
 		Car aCar = new Car(35000, 0, 60, 0.10);
 		
-		assertTrue(aCar.monthlyPayment() == 743.65);
+		assertTrue(Math.round(aCar.monthlyPayment()) == Math.round(743.65));
 		
 	}
 	
@@ -22,7 +24,10 @@ public class CarPaymentTest {
 		
 		Car aCar = new Car(35000, 0, 60, 0.10);
 		
-		assertTrue(aCar.totalInterest() == 9618.79);
+		System.out.print(aCar.totalInterest());
+		
+		assertTrue(Math.round(aCar.totalInterest()) == Math.round(9618.79));
+		
 	}
 
 }

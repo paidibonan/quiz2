@@ -18,7 +18,7 @@ public class Car {
 	}
 	
 	public double monthlyPayment() {
-		double P = ((double)this.carCost - (double)this.downPayment);
+		double P = (double)this.carCost;
 		double monthRate = this.interestRate / 12;
 		double n = (double)this.loanLengthMonths;
 		double num = (monthRate * (Math.pow(1+monthRate, n)));
@@ -28,10 +28,9 @@ public class Car {
 	}
 	
 	public double totalInterest() {
-		double nm = (double)this.loanLengthMonths * this.monthlyPayment();
-		return nm - (double)this.carCost - (double)this.downPayment;
+		double nm = this.monthlyPayment() * (double)this.loanLengthMonths;
+		return nm - this.carCost;
 	}
-	
 	
 
 }
