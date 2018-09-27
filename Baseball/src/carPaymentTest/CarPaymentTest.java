@@ -11,7 +11,7 @@ import java.lang.Math;
 public class CarPaymentTest {
 	
 	@Test
-	public void monthlyPayment_Test() {
+	public void monthlyPayment_Test1() {
 		
 		Car aCar = new Car(35000, 0, 60, 0.10);
 		
@@ -20,7 +20,7 @@ public class CarPaymentTest {
 	}
 	
 	@Test
-	public void totalInterest() {
+	public void totalInterest_Test1() {
 		
 		Car aCar = new Car(35000, 0, 60, 0.10);
 		
@@ -29,5 +29,6 @@ public class CarPaymentTest {
 		assertTrue(Math.round(aCar.totalInterest()) == Math.round(9618.79));
 		
 	}
+	
 
 }
